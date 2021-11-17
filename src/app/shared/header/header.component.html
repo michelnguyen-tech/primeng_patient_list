@@ -1,0 +1,20 @@
+<header id="box">
+    <div class="grid">
+        <div class="col-2">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt=""/>
+            </div>
+        </div>
+        <div class="col-5">
+            <app-nav></app-nav>
+        </div>
+        <div class="col" [style]="{'padding-bottom':'16px'}">
+            <div class="nav-search">
+                <div class="p-input-icon-left" [style]="{'minWidth':'100%'}">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" [style]="{'minWidth':'94%'}" placeholder="Search for: Patient Code, Patient Name, Surgeon Name, Account" />
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,12 @@
+<ul class="nav">
+    <li><button pButton type="button" class="p-button-text p-button-plain p-button-lg"> My Work</button></li>
+    <li><button pButton type="button" label="Case List" class="p-button-text p-button-plain p-button-lg"></button></li>
+    <li style="padding-top:4px"><p-multiSelect placeholder="Filter" styleClass="p-column-filter p-button-plain p-button-lg" optionLabel="name">
+        <ng-template let-option pTemplate="item">
+            <div class="p-multiselect-representative-option">
+            </div>
+        </ng-template>
+    </p-multiSelect></li>
+    <li style="padding-top:4px"><button [style]="{'background':'#0083c0'}" pButton type="button" class="p-button-raised"> New Case</button></li>
+    
+</ul>
