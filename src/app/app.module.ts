@@ -4,13 +4,6 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavComponent } from './shared/nav/nav.component';
-
 import {TableModule} from 'primeng/table';
 import {CalendarModule} from 'primeng/calendar';
 import {SliderModule} from 'primeng/slider';
@@ -24,6 +17,16 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {DropdownModule} from 'primeng/dropdown';
 import {MenuModule} from 'primeng/menu';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
+import {CardModule} from 'primeng/card';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { CaseListComponent } from './pages/case-list/case-list.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { CaseDetailsComponent } from './pages/case-details/case-details.component';
+
 
 
 const UX_MODULE = [
@@ -39,16 +42,18 @@ const UX_MODULE = [
   ProgressBarModule,
   DropdownModule,
   MenuModule,
-  BreadcrumbModule
+  BreadcrumbModule,
+  CardModule
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomePageComponent,
+    CaseListComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    CaseDetailsComponent
   ],
   imports: [
     FormsModule,

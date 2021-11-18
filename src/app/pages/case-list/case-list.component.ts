@@ -3,13 +3,14 @@ import { Case, Representative, Technology, Anatomy } from '../../models/Case';
 import { CaseService } from '../../services/case.service';
 import { Table } from 'primeng/table';
 import { PrimeNGConfig } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-case-list',
+  templateUrl: './case-list.component.html',
+  styleUrls: ['./case-list.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class CaseListComponent implements OnInit {
 
   cases: Case[];
 
@@ -32,7 +33,8 @@ export class HomePageComponent implements OnInit {
   @ViewChild('dt') table: Table;
 
 
-  constructor(private caseService: CaseService, private primengConfig: PrimeNGConfig) { }
+  constructor(private caseService: CaseService, private primengConfig: PrimeNGConfig, 
+    private router: Router) { }
 
   @Input() get selectedColumns(): any[] {
     return this._selectedColumns;
@@ -144,15 +146,19 @@ export class HomePageComponent implements OnInit {
     this.table.filter(event.value[0].technology_name, 'technology_name', 'equals')
     //this.table.filter(event.value, 'technology_name', 'in')
     //this.table.filters['technology_name'] = [{value: event.value, matchMode: "in", operator: "or"}];
-    }
+  }
 
-    onAnatomyChange(event: any) {
-      console.log(event.value);
-      //console.log(this.table.filter(event.value[0], 'technology_name', 'equals'));
-      this.table.filter(event.value[0].name, 'anatomy', 'equals')
-      //this.table.filter(event.value, 'name', 'in')
-      //this.table.filters['technology_name'] = [{value: event.value, matchMode: "in", operator: "or"}];
-      }
+  onAnatomyChange(event: any) {
+    console.log(event.value);
+    //console.log(this.table.filter(event.value[0], 'technology_name', 'equals'));
+    this.table.filter(event.value[0].name, 'anatomy', 'equals')
+    //this.table.filter(event.value, 'name', 'in')
+    //this.table.filters['technology_name'] = [{value: event.value, matchMode: "in", operator: "or"}];
+  }
+
+  casePage(caseId: number) {
+    this.router.navigate(['casedetails', caseId]);
+  }
 }
 
 
