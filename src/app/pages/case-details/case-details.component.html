@@ -32,8 +32,8 @@
                         </div>
                         <p-accordion [multiple]="true">
                             <p-accordionTab header="Person & Office Management">
-                                <div class="p-grid p-fluid">
-                                    <div class="p-field p-col-12 p-md-4 office-txtbx">
+                                <div>
+                                    <div class="office-txtbx">
                                         <div class="p-inputgroup">
                                             <span class="p-inputgroup-addon">
                                                 <i class="pi pi-user"></i>
@@ -44,7 +44,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="p-field p-col-12 p-md-4 office-txtbx">
+                                    <div class="office-txtbx">
                                         <div class="p-inputgroup">
                                             <span class="p-inputgroup-addon">
                                                 <i class="pi pi-user"></i>
@@ -55,7 +55,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="p-field p-col-12 p-md-4 office-txtbx">
+                                    <div class="office-txtbx">
                                         <div class="p-inputgroup">
                                             <span class="p-inputgroup-addon">
                                                 <i class="pi pi-user"></i>
@@ -66,7 +66,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="p-field p-col-12 p-md-4 office-txtbx">
+                                    <div class="office-txtbx">
                                         <div class="p-inputgroup">
                                             <span class="p-inputgroup-addon">
                                                 <i class="pi pi-map-marker"></i>
@@ -80,7 +80,65 @@
                                 </div>
                             </p-accordionTab>
                             <p-accordionTab header="Patient Information">
-                                Content 2
+                                <div class="grid-container">
+                                    <div class="fname"> 
+                                        <div>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputtext" pInputText [(ngModel)]="this.case.first_name"> 
+                                                <label for="inputtext">First Name*</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mname">
+                                        <div>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputtext" pInputText [(ngModel)]="this.case.middle_name"> 
+                                                <label for="inputtext">Middle Name</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="lname">
+                                        <div>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputtext" pInputText [(ngModel)]="this.case.last_name"> 
+                                                <label for="inputtext">Last Name*</label>
+                                            </span>
+                                        </div>
+                                    </div>  
+                                    <div class="birth">
+                                        <span class="p-float-label calendar">
+                                            <p-calendar inputId="calendar" [(ngModel)]="this.case.date_of_birth"></p-calendar>
+                                            <label for="calendar">Date Of Birth*</label>
+                                        </span>
+                                    </div>
+                                    <div class="age">age 23</div>
+                                    <div class="sex">
+                                        <p-selectButton class="gender" [options]="sexOptions" [(ngModel)]="value1" optionLabel="label" optionValue="value"></p-selectButton>
+                                    </div>
+                                    <div class="weight">
+                                        <div>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputtext" pInputText> 
+                                                <label for="inputtext">Weight (Kg)</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="height">
+                                        <div>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputtext" pInputText> 
+                                                <label for="inputtext">Height (cm)</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="allergy">Allergy</div>
+                                    <div class="txtbx">
+                                        <div class="p-field-checkbox">
+                                            <p-checkbox [(ngModel)]="checked" value="true" inputId="binary"></p-checkbox>
+                                            <label for="binary">Nickel</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </p-accordionTab>
                             <p-accordionTab header="Procedure Information">
                                 Content 3    

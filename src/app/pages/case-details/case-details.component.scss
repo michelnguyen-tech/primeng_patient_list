@@ -48,6 +48,55 @@
   margin-top: 15px;
 }
 
+.fname {
+  grid-area: fname;
+}
+.mname {
+  grid-area: mname;
+}
+.lname {
+  grid-area: lname;
+}
+.birth {
+  grid-area: birth;
+}
+.age {
+  grid-area: age;
+}
+.sex {
+  grid-area: sex;
+}
+.weight {
+  grid-area: weight;
+}
+.height {
+  grid-area: height;
+}
+.allergy {
+  grid-area: allergy;
+}
+.txtbx {
+  grid-area: txtbx;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "fname fname mname mname lname lname"
+    "birth birth birth birth age age"
+    "sex sex sex sex sex sex"
+    "weight weight weight height height height"
+    "allergy allergy allergy txtbx txtbx txtbx";
+  grid-gap: 12px;
+}
+
+.grid-container > div {
+  padding: 25px 0;
+
+  & #inputtext {
+    width: 100%;
+  }
+}
+
 :host ::ng-deep {
   .detail-card {
     .p-card.p-component {
@@ -57,5 +106,13 @@
   .p-card-content {
     padding-left: 1%;
     padding-right: 1%;
+  }
+  .grid-container {
+    .p-calendar {
+      width: 99.5%;
+    }
+    .p-buttonset .p-button {
+      width: 50%;
+    }
   }
 }
