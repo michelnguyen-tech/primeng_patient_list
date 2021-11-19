@@ -18,6 +18,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {MenuModule} from 'primeng/menu';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
 import {CardModule} from 'primeng/card';
+import {TabViewModule} from 'primeng/tabview';
+import {AccordionModule} from 'primeng/accordion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,7 +45,9 @@ const UX_MODULE = [
   DropdownModule,
   MenuModule,
   BreadcrumbModule,
-  CardModule
+  CardModule,
+  TabViewModule,
+  AccordionModule
 ]
 
 @NgModule({

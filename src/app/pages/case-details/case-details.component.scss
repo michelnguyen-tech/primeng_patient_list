@@ -1,7 +1,7 @@
 .container {
   padding-top: 40px;
   padding-bottom: 90px;
-  background-color: #f1f1f1;
+  background-color: #f8f8f8;
 }
 
 .form-container {
@@ -25,10 +25,37 @@
   }
 }
 
+.case-info-container .header-section {
+  display: flex; /* or inline-flex */
+  justify-content: space-between;
+}
+
+.office-txtbx {
+  margin-top: 35px;
+}
+
+.case-info-content {
+  .p-text-light {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  display: flex; /* or inline-flex */
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.print-and-cancel {
+  margin-top: 15px;
+}
+
 :host ::ng-deep {
   .detail-card {
     .p-card.p-component {
       margin-top: 25px;
     }
+  }
+  .p-card-content {
+    padding-left: 1%;
+    padding-right: 1%;
   }
 }

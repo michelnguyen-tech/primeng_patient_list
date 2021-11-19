@@ -61,10 +61,9 @@ export class CaseListComponent implements OnInit {
 
   this.selectedColumns = this.cols;
 
-    this.caseService.getCaseLarge().then(cases => {
-      this.cases = cases;
-      this.loading = false;
-      
+  this.caseService.getCases().then(cases => {
+    this.cases = cases;
+    this.loading = false;
   });
 
     this.representatives = [

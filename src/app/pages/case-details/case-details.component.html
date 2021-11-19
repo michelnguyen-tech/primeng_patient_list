@@ -15,7 +15,101 @@
         </p-card>
 
         <p-card class="detail-card">
-            <span>{{caseId}}</span>
+            <p-tabView>
+                <p-tabPanel header="Case Information">
+                   <div class="case-info-container">
+                        <div class="header-section">
+                            <h2>Case Information</h2>
+                            <div class="print-and-cancel">
+                                <i class="pi pi-print" style="font-size: 2rem"></i>
+                                <button [style]="{'background':'#0083c0','margin-left':'20px'}" pButton type="button" class="p-button-raised"> Cancel Case</button>
+                            </div>
+                        </div>
+                        <div class="case-info-content">
+                            <div id="p-code">Patient Code <div class="p-text-light">{{this.case.psi_case_id}}</div></div>
+                            <div id="p-external-id">External Id <div class="p-text-light">{{this.case.case_primary_key}}</div></div>
+                            <div id="case-status">Case Status <div class="p-text-light">{{this.case.case_status}}</div></div>
+                        </div>
+                        <p-accordion [multiple]="true">
+                            <p-accordionTab header="Person & Office Management">
+                                <div class="p-grid p-fluid">
+                                    <div class="p-field p-col-12 p-md-4 office-txtbx">
+                                        <div class="p-inputgroup">
+                                            <span class="p-inputgroup-addon">
+                                                <i class="pi pi-user"></i>
+                                            </span>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputgroup" pInputText [(ngModel)]="this.case.surgeon_name"> 
+                                                <label for="inputgroup">Surgeon*</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="p-field p-col-12 p-md-4 office-txtbx">
+                                        <div class="p-inputgroup">
+                                            <span class="p-inputgroup-addon">
+                                                <i class="pi pi-user"></i>
+                                            </span>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputgroup" pInputText [(ngModel)]="this.case.account_name"> 
+                                                <label for="inputgroup">Account*</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="p-field p-col-12 p-md-4 office-txtbx">
+                                        <div class="p-inputgroup">
+                                            <span class="p-inputgroup-addon">
+                                                <i class="pi pi-user"></i>
+                                            </span>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputgroup" pInputText [(ngModel)]="this.case.sales_rep_name"> 
+                                                <label for="inputgroup">Sales Team / Sales Rep*</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="p-field p-col-12 p-md-4 office-txtbx">
+                                        <div class="p-inputgroup">
+                                            <span class="p-inputgroup-addon">
+                                                <i class="pi pi-map-marker"></i>
+                                            </span>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputgroup" pInputText [(ngModel)]="this.case.distributor_territory"> 
+                                                <label for="inputgroup">Distributor*</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p-accordionTab>
+                            <p-accordionTab header="Patient Information">
+                                Content 2
+                            </p-accordionTab>
+                            <p-accordionTab header="Procedure Information">
+                                Content 3    
+                            </p-accordionTab>
+                            <p-accordionTab header="Surgery Date">
+                                Content 3    
+                            </p-accordionTab>
+                            <p-accordionTab header="Additional Information (optional)">
+                                Content 3    
+                            </p-accordionTab>
+                        </p-accordion>
+                   </div>
+                </p-tabPanel>
+                <p-tabPanel header="Product Information">
+                    <div class="case-info-container">
+                        <p-accordion [multiple]="true">
+                            <p-accordionTab header="Header 1">
+                                Content 1
+                            </p-accordionTab>
+                            <p-accordionTab header="Header 2">
+                                Content 2
+                            </p-accordionTab>
+                            <p-accordionTab header="Header 3">
+                                Content 3    
+                            </p-accordionTab>
+                        </p-accordion>
+                    </div>
+                </p-tabPanel>
+            </p-tabView>
         </p-card>
     </div>  
 </div>
