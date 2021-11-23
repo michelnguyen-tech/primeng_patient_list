@@ -22,6 +22,7 @@ import {TabViewModule} from 'primeng/tabview';
 import {AccordionModule} from 'primeng/accordion';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {CheckboxModule} from 'primeng/checkbox';
+import {FileUploadModule} from 'primeng/fileupload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,7 +52,8 @@ const UX_MODULE = [
   TabViewModule,
   AccordionModule,
   SelectButtonModule,
-  CheckboxModule
+  CheckboxModule,
+  FileUploadModule
 ]
 
 @NgModule({

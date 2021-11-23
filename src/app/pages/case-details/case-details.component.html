@@ -32,8 +32,8 @@
                         </div>
                         <p-accordion [multiple]="true">
                             <p-accordionTab header="Person & Office Management">
-                                <div>
-                                    <div class="office-txtbx">
+                                <div class="office-txtbx-group">
+                                    <div class="office-txtbx-1">
                                         <div class="p-inputgroup">
                                             <span class="p-inputgroup-addon">
                                                 <i class="pi pi-user"></i>
@@ -111,7 +111,7 @@
                                             <label for="calendar">Date Of Birth*</label>
                                         </span>
                                     </div>
-                                    <div class="age">age 23</div>
+                                    <div class="age">age : 23</div>
                                     <div class="sex">
                                         <p-selectButton class="gender" [options]="sexOptions" [(ngModel)]="value1" optionLabel="label" optionValue="value"></p-selectButton>
                                     </div>
@@ -141,15 +141,75 @@
                                 </div>
                             </p-accordionTab>
                             <p-accordionTab header="Procedure Information">
-                                Content 3    
+                                <div class="procedure-txtbx-group">
+                                    <div class="proc-txtbx">
+                                        <div id="p-anatomy">Anatomy <div class="p-text-light">{{this.case.anatomy}}</div></div>
+                                    </div>
+                                    <div class="proc-txtbx">
+                                        <div id="p-technology">Technology <div class="p-text-light">{{this.case.technology_name}}</div></div>
+                                    </div>
+                                    <div class="proc-drpdwn">
+                                        <span>Modality*</span>
+                                        <p-dropdown [options]="modalities" [(ngModel)]="this.case.modality_code_id" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" optionLabel="name" optionValue="code"></p-dropdown>
+                                    </div>
+                                    <div class="proc-drpdwn">
+                                        <span>Procedure*</span>
+                                        <p-dropdown [options]="procedures" [(ngModel)]="this.case.procedure_name" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" optionLabel="name" optionValue="code"></p-dropdown>
+                                    </div>
+                                    <div class="proc-drpdwn">
+                                        <span>Family*</span>
+                                        <p-dropdown [options]="families" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" optionLabel="name" optionValue="code"></p-dropdown>
+                                    </div>
+                                    <div class="prod-and-brand">
+                                        <div id="p-prod">Product <div class="p-text-light">product</div></div>
+                                        <div id="p-brand">Brand <div class="p-text-light">type</div></div>
+                                    </div>
+                                    <div class="sex">
+                                        <p-selectButton class="side" [options]="sideOptions" [(ngModel)]="sideValue" optionLabel="label" optionValue="value"></p-selectButton>
+                                    </div>
+                                    <div class="scan-center">
+                                        <span id="scan-label">Scan Center</span>
+                                        <span class="p-input-icon-right">
+                                            <i class="pi pi-image"></i>
+                                            <input type="text" pInputText [(ngModel)]="this.case.scan_center_name" >        
+                                        </span> 
+                                    </div>
+                                </div>    
                             </p-accordionTab>
                             <p-accordionTab header="Surgery Date">
-                                Content 3    
+                                <div class="surg-date">
+                                    <span class="p-float-label calendar">
+                                        <p-calendar inputId="calendar" [showIcon]="true" [(ngModel)]="this.case.surgery_date"></p-calendar>
+                                        <label for="calendar">Surgery Date*</label>
+                                    </span>
+                                    <div class="deadline">Image Upload Deadline : 21/21/21 </div>
+                                </div> 
                             </p-accordionTab>
                             <p-accordionTab header="Additional Information (optional)">
-                                Content 3    
+                                <div class="add-info">
+                                    <div class="patient-id">
+                                        <div>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputtext" pInputText [(ngModel)]="this.case.patient_id"> 
+                                                <label for="inputtext">Internal Hospital Patient Id</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="po-number">
+                                        <div>
+                                            <span class="p-float-label">
+                                                <input type="text" id="inputtext" pInputText [(ngModel)]="this.case.case_primary_key"> 
+                                                <label for="inputtext">Hospital PO Number</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </p-accordionTab>
                         </p-accordion>
+                        <div class="discard-and-save">
+                            <button [style]="{'background':'#000000'}" pButton type="button" class="p-button-raised"> Discard Changes</button>
+                            <button [style]="{'background':'#0083c0'}" pButton type="button" class="p-button-raised"> Cancel Case</button>
+                        </div>
                    </div>
                 </p-tabPanel>
                 <p-tabPanel header="Product Information">

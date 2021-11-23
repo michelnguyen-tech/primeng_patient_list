@@ -30,8 +30,15 @@
   justify-content: space-between;
 }
 
+.office-txtbx-1 {
+  margin-top: 30px;
+}
 .office-txtbx {
-  margin-top: 35px;
+  margin-top: 55px;
+}
+
+.office-txtbx-group {
+  margin-bottom: 30px;
 }
 
 .case-info-content {
@@ -42,6 +49,7 @@
   display: flex; /* or inline-flex */
   justify-content: space-around;
   margin-top: 5px;
+  margin-bottom: 8px;
 }
 
 .print-and-cancel {
@@ -50,12 +58,15 @@
 
 .fname {
   grid-area: fname;
+  margin-top: 15px;
 }
 .mname {
   grid-area: mname;
+  margin-top: 15px;
 }
 .lname {
   grid-area: lname;
+  margin-top: 15px;
 }
 .birth {
   grid-area: birth;
@@ -97,6 +108,74 @@
   }
 }
 
+.procedure-txtbx-group {
+  margin-top: 20px;
+  .p-text-light {
+    margin-top: 14px;
+    margin-bottom: 43px;
+    font-style: italic;
+    font-size: small;
+  }
+
+  #p-technology {
+    margin-bottom: 40px;
+  }
+
+  .proc-drpdwn {
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    margin-top: 37px;
+    span {
+      margin-bottom: 14px;
+    }
+  }
+
+  .prod-and-brand {
+    display: flex;
+    margin-top: 40px;
+    #p-brand {
+      padding-left: 50%;
+    }
+  }
+}
+
+.surg-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 53px;
+  margin-bottom: 41px;
+
+  .deadline {
+    padding-top: 9px;
+  }
+}
+
+.patient-id {
+  grid-area: patient-id;
+}
+.po-number {
+  grid-area: po-number;
+}
+
+.add-info {
+  display: grid;
+  margin-top: 31px;
+  margin-bottom: 12px;
+  grid-template-areas: "patient-id patient-id patient-id po-number po-number po-number";
+  grid-gap: 12px;
+  & #inputtext {
+    width: 100%;
+  }
+}
+
+.discard-and-save {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 :host ::ng-deep {
   .detail-card {
     .p-card.p-component {
@@ -113,6 +192,42 @@
     }
     .p-buttonset .p-button {
       width: 50%;
+    }
+  }
+  .procedure-txtbx-group {
+    .proc-drpdwn {
+      .p-dropdown {
+        width: 100%;
+      }
+    }
+    .p-buttonset .p-button {
+      width: 50%;
+    }
+
+    .scan-center {
+      margin-top: 29px;
+      .p-inputtext {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 100%;
+      }
+      #scan-label {
+        margin-top: 20px;
+      }
+      .p-input-icon-right {
+        width: 100%;
+      }
+      i {
+        padding-top: 1px;
+      }
+    }
+  }
+
+  .add-info {
+    .p-inputtext {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      width: 40%;
     }
   }
 }
