@@ -176,6 +176,17 @@
   justify-content: space-between;
 }
 
+.femoral-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.femoral-left {
+  padding-right: 30%;
+}
+
 :host ::ng-deep {
   .detail-card {
     .p-card.p-component {

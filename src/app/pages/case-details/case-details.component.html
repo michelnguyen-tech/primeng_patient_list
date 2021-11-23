@@ -206,28 +206,54 @@
                                 </div>
                             </p-accordionTab>
                         </p-accordion>
-                        <div class="discard-and-save">
-                            <button [style]="{'background':'#000000'}" pButton type="button" class="p-button-raised"> Discard Changes</button>
-                            <button [style]="{'background':'#0083c0'}" pButton type="button" class="p-button-raised"> Cancel Case</button>
-                        </div>
                    </div>
                 </p-tabPanel>
                 <p-tabPanel header="Product Information">
                     <div class="case-info-container">
-                        <p-accordion [multiple]="true">
-                            <p-accordionTab header="Header 1">
-                                Content 1
-                            </p-accordionTab>
-                            <p-accordionTab header="Header 2">
-                                Content 2
-                            </p-accordionTab>
-                            <p-accordionTab header="Header 3">
-                                Content 3    
-                            </p-accordionTab>
-                        </p-accordion>
+                        <div class="header-section">
+                            <h2>Product Information</h2>
+                            <div class="print-and-cancel">
+                                <i class="pi pi-print" style="font-size: 2rem"></i>
+                                <button [style]="{'background':'#0083c0','margin-left':'20px'}" pButton type="button" class="p-button-raised"> Cancel Case</button>
+                            </div>
+                        </div>
+                        <div class="product-info-content">
+                            <div class="procedure-txtbx-group" style="margin-top: 0px">
+                                <div class="proc-drpdwn" style="margin-top: 0px">
+                                    <span>Family*</span>
+                                    <p-dropdown [options]="families" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" optionLabel="name" optionValue="code"></p-dropdown>
+                                </div>
+                                <div class=femoral-section>
+                                    <div class="femoral-left">
+                                        <div class="proc-txtbx">
+                                            <div id="p-anatomy">Femoral Implant Brand <div class="p-text-light">Femoral Implant Type</div></div>
+                                        </div>
+                                        <div class="proc-txtbx">
+                                            <div id="p-technology">Femoral Implant Size <div class="p-text-light">Femoral Implant Size</div></div>
+                                        </div>
+                                        <div class="proc-txtbx">
+                                            <div id="p-technology">Femoral Instrumentation <div class="p-text-light">Femoral Instrumentation</div></div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="femoral-right">
+                                        <div class="proc-txtbx">
+                                            <div id="p-anatomy">Tibia Implant Brand <div class="p-text-light">Tibia Implant Type</div></div>
+                                        </div>
+                                        <div class="proc-txtbx">
+                                            <div id="p-technology">Tibia Implant Size <div class="p-text-light">Tibia Implant Size</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
                     </div>
                 </p-tabPanel>
             </p-tabView>
+            <div class="discard-and-save">
+                <button [style]="{'background':'#000000'}" pButton type="button" class="p-button-raised"> Discard Changes</button>
+                <button [style]="{'background':'#0083c0'}" pButton type="button" class="p-button-raised"> Save Changes</button>
+            </div>
         </p-card>
     </div>  
 </div>

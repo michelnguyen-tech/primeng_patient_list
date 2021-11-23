@@ -1,5 +1,5 @@
 <div class="container">
-    <p-table [resizableColumns]="true" #dt [value]="cases" [columns]="selectedColumns" [(selection)]="selectedCases" dataKey="psi_case_id" styleClass="p-datatable-gridlines" [rowHover]="true"
+    <p-table #dt [value]="cases" [resizableColumns]="true" [columns]="selectedColumns" [(selection)]="selectedCases" dataKey="psi_case_id" styleClass="p-datatable-gridlines" [rowHover]="true"
             [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [loading]="loading"
             [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
             [filterDelay]="0" [globalFilterFields]="['patient_code','patient_name','surgery_date','account_name']">
@@ -65,7 +65,7 @@
                     </th>
                     <th></th>
                 </tr>
-                <tr>
+                <tr class="column-table">
                     <th pResizableColumn>Case Health</th>
                     <th pResizableColumn pSortableColumn="psi_case_id">Patient Code <p-sortIcon field="Code"></p-sortIcon></th>
                     <th pResizableColumn pSortableColumn="first_name">Patient Name <p-sortIcon field="Name"></p-sortIcon></th>
